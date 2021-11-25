@@ -6,16 +6,25 @@ public:
         
         int l=s.size();
         int low=0,high=l-1;
+        swap(s,low,high);
+        
+    }
+    
+    void swap(vector<char>& s,int low,int high)
+    {
         int temp;
         
-        while(low<high)
+        if(low>high)
+        {
+            return;
+        }
+        else
         {
             temp=s[low];
             s[low]=s[high];
             s[high]=temp;
             
-            low++;
-            high--;
+            swap(s,low+1,high-1);   
         }
     }
 };
