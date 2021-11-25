@@ -1,0 +1,36 @@
+// Count number of words
+
+int countWords(string s)
+{
+    //code here.
+    int l=s.size();
+    int count=0;
+    int alp=0;
+    int i=0;
+    
+    while(i<l)
+    {
+        alp=0;
+        while(i<l && isalpha(s[i]))
+        {
+            alp=1;
+            i++;
+        }
+        
+        if(s[i]=='\\')
+        {
+            i+=2;
+        }
+        if(s[i]==' ')
+        {
+            i++;
+        }
+        
+        
+        if(alp==1)
+        {
+            count++;
+        }
+    }
+    return count;
+}
