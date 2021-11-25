@@ -1,0 +1,33 @@
+// Power of two
+
+class Solution {
+public:
+    
+    bool power(int n,long long a,long long b)
+    {
+        if(n==a)
+        {
+            return true;
+        }
+        else if(n<a)
+        {
+            return false;
+        }
+        
+        a=pow(2,b);
+        b++;
+        
+        return power(n,a,b);
+    }
+    bool isPowerOfTwo(int n) {
+        
+        if(n==0)
+        {
+            return false;
+        }
+        else
+        {
+            return power(n,0,0);
+        }
+    }
+};
